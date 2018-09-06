@@ -1,0 +1,163 @@
+﻿@model Infraction_2.Models.AskquestionViewModel
+@{
+    ViewBag.Title = "Infraction2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="header">
+            <div class="logo">
+                <img src="~/Content/images/logo.jpg" , alt="logo">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="navigation">
+        <div class="row">
+            <ul class="topnav">
+                <li></li>
+                <li><a href="index.html"><i class="fa fa-home"></i>  Home</a></li>
+                <li><a href="~/WebForm1.aspx"><i class="fa fa-book"></i> OTC Diagram</a></li>
+                <li><a href="articles.html"><i class="fa fa-file-text-o"></i> Articles</a></li>
+                <li><a href="faq.html"><i class="fa fa-lightbulb-o"></i> FAQ</a></li>
+                <li class="icon">
+                    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="content" class="snippet-hidden">
+    <div id="mainbar" class="ask-mainbar box-border">
+
+        <form id="post-form" class="post-form" action="/questions/ask/submit" method="post">
+            <input type="hidden" name="qualityBanWarningShown" value="False" />
+            <input type="hidden" name="priorAttemptCount" value="0" />
+            <input type="hidden" name="warntags" />
+            <div id="question-form">
+                <div class="question-context-title">
+                    Ask a question
+                </div>
+                <div class="wz-element" id="post-title" style="position: relative;" data-wz-state="1,2,8">
+                    <div class="form-item ask-title">
+
+                        <label class="s-label mb4" for="title">Title</label>
+                        <div class="fl1">
+                            <input id="title" name="title" type="text" maxlength="300" tabindex="100" placeholder="What&#39;s your programming question? Be specific." class="s-input" data-min-length="15" data-max-length="150">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<h2>Incorrect Medical Group Attached</</h2>
+
+<br />
+
+<head>
+    <u>
+        ISSUE :
+    </u>
+
+</head>
+
+
+<body>
+    <li>
+        PC team verifies insurance information in Emdeon site and tags info available  as per reporting payor however appropriate medical group must be tagged to obtain authorization .
+    </li>
+</body>
+
+<br />
+<head>
+    <u>
+        IMPACT :
+    </u>
+</head>
+<br />
+
+<li> ER initiates payor change for Medical group and the same would be cancelled by payor change team.</li>
+<li>As rejection is not fixed claim would not reach payor.</li>
+<br />
+
+<head>
+    <u>
+        PROPOSED SOLUTION :
+    </u>
+</head>
+<br />
+
+<li>  Validate the instruction and that need to cascaded to ER.</li>
+
+
+
+
+<div class="container-fluid footer marg30">
+    <div class="container">
+        <!-- FOOTER COLUMN ONE -->
+        <div class="col-xs-12 col-sm-4 col-md-4 margin-top-20">
+            <div class="panel-transparent">
+                <div class="footer-heading">How it works</div>
+                <div class="footer-body">
+                    <ul>
+                        <li> <a href="single-category.html">Details about infraction portal</a> </li>
+                        <li> <a href="single-category.html">one touch solution for all</a> </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <!-- END FOOTER COLUMN ONE -->
+        <!-- FOOTER COLUMN TWO -->
+        <div class="col-xs-12 col-sm-4 col-md-4 margin-top-20">
+            <div class="panel-transparent">
+                <div class="footer-heading">Categories</div>
+                <div class="footer-body">
+                    <ul>
+                        <li> <a href="single-category.html">General</a> </li>
+                        <li> <a href="single-category.html">Getting Started</a> </li>
+                        <li> <a href="single-category.html">Account Support</a> </li>
+                        <li> <a href="single-category.html">Guides</a> </li>
+                        <li> <a href="single-category.html">Payment &amp; Billing</a> </li>
+                        <li> <a href="single-category.html">Misc</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END FOOTER COLUMN TWO -->
+        <!-- FOOTER COLUMN THREE -->
+        <div class="col-xs-12 col-sm-4 col-md-4 margin-top-20">
+            <div class="panel-transparent">
+                <div class="footer-heading">Popular Articles</div>
+                <div class="footer-body">
+                    <ul>
+                        <li> <a href="single-article.html">How to change account password</a> </li>
+                        <li> <a href="single-article.html">How to edit order details</a> </li>
+                        <li> <a href="single-article.html">Add new user</a> </li>
+                        <li> <a href="single-article.html">Change customer details</a> </li>
+                        <li> <a href="single-article.html">Lookup existing customer in order form</a> </li>
+                        <li> <a href="single-article.html">How do I reset my password</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END FOOTER COLUMN THREE -->
+    </div>
+</div>
+<div class="container-fluid footer-copyright marg30">
+    <div class="container">
+        <div class="pull-left">
+            Copyright © 2018 HCL Infraction portal</a>
+        </div>
+        <div class="pull-right">
+            <i class="fa fa-facebook"></i> &nbsp;
+            <i class="fa fa-twitter"></i> &nbsp;
+            <i class="fa fa-linkedin"></i>
+        </div>
+    </div>
+</div>

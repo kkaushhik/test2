@@ -1,0 +1,337 @@
+﻿@model IEnumerable<Infraction_2.Models.PostModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+<!-- LOGO -->
+<div class="container">
+    <div class="row">
+        <div class="header">
+            <div class="logo">
+                <img src="~/Content/images/logo.jpg" , alt="logo">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END LOGO-->
+<!-- TOP NAVIGATION -->
+<div class="container-fluid">
+    <div class="navigation">
+        <div class="row">
+            <ul class="topnav">
+                <li></li>
+                <li><a href="index.html"><i class="fa fa-home"></i>  Home</a></li>
+                <li><a href="~/WebForm1.aspx"><i class="fa fa-book"></i> OTC Diagram</a></li>
+                <li><a href="articles.html"><i class="fa fa-file-text-o"></i> Articles</a></li>
+                <li><a href="faq.html"><i class="fa fa-lightbulb-o"></i> FAQ</a></li>
+                <li class="icon">
+                    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END TOP NAVIGATION -->
+<!-- SEARCH FIELD AREA -->
+<div class="searchfield bg-hed-six">
+    <div class="container" style="padding-top: 10px; padding-bottom: 10px;">
+        <div class="row text-center margin-bottom-20">
+
+
+
+            <h1 class="white"> Apria Infraction portal</h1>
+            <span class="nested"> Learn about Knowledge sharing </span>
+        </div>
+        <br>
+        <div class="row search-row">
+            <input class="search" type="text" placeholder="What do you need help with?">
+            <a class="buttonsearch btn btn-info btn-lg" href="search-results.html">Search</a>
+        </div>
+    </div>
+</div>
+<!-- END SEARCH FIELD AREA -->
+
+<div class="container featured-area-default padding-30">
+    <div class="row">
+        <div class="col-md-8 padding-20">
+            <!-- LATEST VIDEO TUTORIAL AREA -->
+            <div class="row margin-bottom-30">
+                <div class="col-md-11">
+                    <div class="row">
+                        <div class="featured-box">
+                            <div class="fb-heading">
+                                Tracks List of HCL-Apria
+                                <div class="fb-sub-heading">
+                                    <b>To Know about Tracks?</b> Click on the desired headings<br>
+                                </div>
+                            </div>
+                            <hr class="style-three">
+                            <div class="fat-content-small">
+                                <ul>
+                                    <li><i class="fa fa-file"></i>@Html.ActionLink("Medical Claims", "MedicalClaims", "Home")</li>
+                                    <li><i class="fa fa-file"></i>@Html.ActionLink("Electronic Rejections", "Electronicrejection", "Home")</li>
+                                    <li><i class="fa fa-file"></i>@Html.ActionLink("Medicare Collections", "Medicare", "Home")</li>
+                                    <li><i class="fa fa-file"></i>@Html.ActionLink("Payor Change", "Payorchange", "Home")</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- END LATEST VIDEO TUTORIAL AREA -->
+            <!-- ARTICLE CATEGORIES SECTION -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="grid">
+                        <div class="fb-heading">
+                            Top Infractions
+
+                        </div>
+                    </div>
+                    <!-- buttons like Newest,votes,active,closed -->
+                    <div class="grid ai-center mb16">
+                        <div class="grid--cell fl1 fs-body3"></div>
+                        <div class="grid--cell">
+                            <div class="grid tabs-filter s-btn-group tt-capitalize">
+
+                                <a class="youarehere is-selected grid--cell s-btn s-btn__muted s-btn__outlined py8 ws-nowrap btn-primary" href="https://stackoverflow.com/?tab=interesting" data-nav-xhref="" title="Questions that may be of interest to you based on your history and tag preference" data-value="interesting" data-shortcut="">
+                                    Newest_Infraction
+                                </a>
+                                <a class="grid--cell s-btn s-btn__muted s-btn__outlined py8 ws-nowrap" href="https://stackoverflow.com/?tab=featured" data-nav-xhref="" title="Questions with an active bounty" data-value="featured" data-shortcut="B">
+                                    <span class="bounty-indicator-tab">Votes</span>
+                                </a>
+                                <a class="grid--cell s-btn s-btn__muted s-btn__outlined py8 ws-nowrap" href="https://stackoverflow.com/?tab=hot" data-nav-xhref="" title="Questions with the most views, answers, and votes over the last few days" data-value="hot" data-shortcut="H">
+                                    Active
+                                </a>
+                                <a class="grid--cell s-btn s-btn__muted s-btn__outlined py8 ws-nowrap" href="https://stackoverflow.com/?tab=week" data-nav-xhref="" title="Questions with the most views, answers, and votes this week" data-value="week" data-shortcut="W">
+                                    Closed
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="qlist-wrapper" class="flush-left">
+                        <div id="question-mini-list">
+                            <div>
+                                <!-- Table Values -->
+                                @foreach (var item in Model)
+                                {
+
+
+
+                                    <div class="question-summary narrow">
+                                        <div class="cp">
+                                            <div class="votes">
+                                                <div class="mini-counts"><span title="0 votes">0</span></div>
+                                                <div>votes</div>
+                                            </div>
+                                            <div class="status unanswered">
+                                                <div class="mini-counts"><span title="0 answers">0</span></div>
+                                                <div>answers</div>
+                                            </div>
+                                            <div class="views">
+                                                <div class="mini-counts"><span title="2 views">2</span></div>
+                                                <div>views</div>
+                                            </div>
+
+                                        </div>
+                                        <div class="summary">
+                                            <h4>
+                                                <a>
+                                                    @Html.DisplayFor(modelItem => item.Title)
+                                                </a>
+                                            </h4>
+
+                                            <div class="tags">
+                                                <div class="btn btn-info btn-xs">
+                                                @Html.DisplayFor(modelItem => item.Tags)
+                                                    </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                }
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <a href="knowledge-base.html" class="btn btn-primary pull-right">
+                        <i class="fa fa-align-justify"></i> View All
+                    </a>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <!-- SIDEBAR STUFF -->
+        <div class="col-md-4 padding-20">
+            <div class="row margin-bottom-30">
+                <div class="col-md-12 ">
+                    <div class="support-container">
+                        <h2 class="support-heading">Need To Post Infraction?</h2>
+                        <!-- If you like to post infraction to other Tracks <a href="Home/Infraction1">Click Here</a>. -->
+                        If you like to post infraction to other Tracks <a>@Html.ActionLink("Click Here", "AddPost", "Post")</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-top-20">
+                <div class="col-md-12">
+                    <div class="fb-heading-small">
+                        Popular Infractions
+                    </div>
+                    <hr class="style-three">
+                    <div class="fat-content-small padding-left-10">
+                        <ul>
+                            <li><i class="fa fa-file-text-o"></i>@Html.ActionLink("Incorrect Medical Group Attached", "MedicalClaims", "Home")</li>
+
+                            <li> <a href="#"><i class="fa fa-file-text-o"></i> CMN To Be Attached For Primary Medicare</a> </li>
+                            <li> <a href="#"><i class="fa fa-file-text-o"></i> BCBS NC Incorrectly Initiated PC</a> </li>
+                            <li> <a href="#"><i class="fa fa-file-text-o"></i> Initial Auth Missed</a> </li>
+                            <li> <a href="#"><i class="fa fa-file-text-o"></i> Machine Model/Make Not Verified</a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-top-20">
+                <div class="col-md-12">
+                    <div class="fb-heading-small">
+                        Latest Updates
+                    </div>
+                    <hr class="style-three">
+                    <div class="fat-content-small padding-left-10">
+                        <ul>
+                            <li> <a href="#"><i class="fa fa-file-text-o"></i> How to change username?</a> </li>
+                            <li> <a href="#"><i class="fa fa-file-text-o"></i> How to change currency in gomac?</a> </li>
+                            <li> <a href="#"><i class="fa fa-file-text-o"></i> How to edit order details?</a> </li>
+                            <li> <a href="#"><i class="fa fa-file-text-o"></i> How to print stock barcode?</a> </li>
+                            <li> <a href="#"><i class="fa fa-file-text-o"></i> How to generate barcode?</a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- POPULAR TAGS (SHOW MAX 20 TAGS) -->
+            <div class="row margin-top-20">
+                <div class="col-md-12">
+                    <div class="fb-heading-small">
+                        Popular Tags
+                    </div>
+                    <hr class="style-three">
+                    <div class="fat-content-tags padding-left-10">
+                        <a href="#" class="btn btn-default btn-o btn-sm">Medicalclaims</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">Rejections</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">Payorchange</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">Auth</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">Faxintake</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">Triage</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">SleepEQ</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">Patientcalling</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">NCPC</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">Coding</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">PAP-EQ</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">campaign</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">Resupply</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">orders</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">SleepCS</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">billing</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">user</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">FI</a>
+                        <a href="#" class="btn btn-default btn-o btn-sm">customer</a>
+                    </div>
+                </div>
+            </div>
+            <!-- END POPULAR TAGS (SHOW MAX 20 TAGS) -->
+        </div>
+        <!-- END SIDEBAR STUFF -->
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<!-- FOOTER -->
+<div class="container-fluid footer marg30">
+    <div class="container">
+        <!-- FOOTER COLUMN ONE -->
+        <div class="col-xs-12 col-sm-4 col-md-4 margin-top-20">
+            <div class="panel-transparent">
+                <div class="footer-heading">How it works</div>
+                <div class="footer-body">
+                    <ul>
+                        <li> <a href="single-category.html">Details about infraction portal</a> </li>
+                        <li> <a href="single-category.html">one touch solution for all</a> </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <!-- END FOOTER COLUMN ONE -->
+        <!-- FOOTER COLUMN TWO -->
+        <div class="col-xs-12 col-sm-4 col-md-4 margin-top-20">
+            <div class="panel-transparent">
+                <div class="footer-heading">Categories</div>
+                <div class="footer-body">
+                    <ul>
+                        <li> <a href="single-category.html">General</a> </li>
+                        <li> <a href="single-category.html">Getting Started</a> </li>
+                        <li> <a href="single-category.html">Account Support</a> </li>
+                        <li> <a href="single-category.html">Guides</a> </li>
+                        <li> <a href="single-category.html">Payment &amp; Billing</a> </li>
+                        <li> <a href="single-category.html">Misc</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END FOOTER COLUMN TWO -->
+        <!-- FOOTER COLUMN THREE -->
+        <div class="col-xs-12 col-sm-4 col-md-4 margin-top-20">
+            <div class="panel-transparent">
+                <div class="footer-heading">Popular Articles</div>
+                <div class="footer-body">
+                    <ul>
+                        <li> <a href="single-article.html">How to change account password</a> </li>
+                        <li> <a href="single-article.html">How to edit order details</a> </li>
+                        <li> <a href="single-article.html">Add new user</a> </li>
+                        <li> <a href="single-article.html">Change customer details</a> </li>
+                        <li> <a href="single-article.html">Lookup existing customer in order form</a> </li>
+                        <li> <a href="single-article.html">How do I reset my password</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END FOOTER COLUMN THREE -->
+    </div>
+</div>
+<!-- END FOOTER -->
+<!-- COPYRIGHT INFO -->
+<div class="container-fluid footer-copyright marg30">
+    <div class="container">
+        <div class="pull-left">
+            Copyright © 2018 HCL Infraction portal</a>
+        </div>
+        <div class="pull-right">
+            <i class="fa fa-facebook"></i> &nbsp;
+            <i class="fa fa-twitter"></i> &nbsp;
+            <i class="fa fa-linkedin"></i>
+        </div>
+    </div>
+</div>
